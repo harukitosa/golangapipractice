@@ -94,7 +94,7 @@ func main() {
 			2021/01/16 17:37:54 Listening on port 8080
 			2021/01/16 17:37:54 68030 :8080
 
-		webブラウザでhttp://localhost:8080/と打ち込んで見て	"message": "hello, world"が表示されたら正しく動作しています。
+		webブラウザ(Safari Chrome..)でhttp://localhost:8080/と打ち込んで見て	"message": "hello, world"が表示されたら正しく動作しています。
 	*/
 }
 
