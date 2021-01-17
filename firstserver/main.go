@@ -45,13 +45,18 @@ func main() {
 			[関数についてのコメント]
 			JSON serializes the given struct as JSON into the response body. It also sets the Content-Type as "application/json".
 
-			構造体をJSONとしてレスポンスボディに記入する
+			構造体をJSONとしてresponse bodyに記入する
 			難しく考えず、JSON形式で表示すると読み替えていい。
 
 			以下の例では"message": "hello, world"からなるgolangのmapをJSONに置き換えてレスポンスボディにシリアライズしている。
 		*/
+		str := ctx.Request.Header["Accept"]
+		for _, v := range str {
+			log.Println(v)
+		}
+		// log.Printf("%#v\n", ctx.Request.Header["Accept"])
 		ctx.JSON(200, gin.H{
-			"message": "hello, world",
+			"message": "sorry I'm hungry",
 		})
 	})
 
@@ -70,7 +75,7 @@ func main() {
 
 			ListenAndServe は TCP ネットワークアドレスのアドレ スをリッスンしてから Serve をハンドラで呼び出し、着信接続のリクエストを処理します。ハンドラは通常 nil で、その場合は DefaultServeMux が使用されます。
 
-			これでポートで通信がくるのを待ち構えている。
+			これでポートに通信がくるのを待ち構えている。
 	*/
 	endless.ListenAndServe(":"+port, router)
 
