@@ -4,7 +4,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/fvbock/endless"
 	"github.com/gin-gonic/gin"
 )
 
@@ -78,7 +77,7 @@ func main() {
 		log.Printf("Defaulting to port %s", port)
 	}
 	log.Printf("Listening on port %s", port)
-	endless.ListenAndServe(":"+port, router)
+	router.Run(":" + port)
 
 	/*
 		コードが読めたら実装に動作させてみよう
